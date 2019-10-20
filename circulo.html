@@ -1,0 +1,36 @@
+<html>
+<head><title>ball html5</title></head>
+<body>
+ <canvas id="c" width="200" height="200"></canvas>
+ <script type="text/javascript">
+ 
+ var canvas, ctx;
+ 
+ function drawBall(x,y,r,color){
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.arc(x, y, r, 0, Math.PI*2, true);
+  ctx.closePath();
+  ctx.fill();
+ }
+
+ function clear(){
+  canvas.width =  canvas.width;
+ }
+ 
+ function init(){
+  canvas = document.getElementById("c");
+  ctx = canvas.getContext("2d");
+  setInterval(loop, 1000/30);
+ }
+ 
+ function loop(){
+  clear();
+  drawBall(100,100,20,"#007eff");
+ }
+ 
+ window.onload = init;
+  
+ </script>
+</body>
+</html>
